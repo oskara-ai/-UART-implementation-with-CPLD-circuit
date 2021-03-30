@@ -1,0 +1,344 @@
+#$ TOOL ispLEVER Classic 2.0.00.17.20.15
+#$ DATE Wed Nov 20 12:57:23 2019
+#$ MODULE harhoitustyo
+#$ PINS 16 in_1_ in_0_ in_7_ state_3_ state_2_ state_4_ state_1_ clk state_0_ ce ser_out \
+#  in_6_ in_5_ in_4_ in_3_ in_2_
+#$ NODES 106 G_7 G_9 ser_out_0_sqmuxa N_1 ser_out25_1 N_4 N_8 N_15 N_17 N_19 N_23 N_25 N_26 \
+#  N_27 N_28 N_29 N_30 N_31 N_32 N_33 N_35 N_47 G_5_i_x2 N_16 N_18 state_2_3__n N_24 N_12 N_10 \
+#  state_i_0__n state_i_4__n state_i_1__n in_i_1__n in_i_5__n in_i_3__n in_i_4__n \
+#  in_i_2__n in_i_6__n ce_i state_i_2__n in_i_7__n in_i_0__n state_i_3__n \
+#  ser_out_0_sqmuxa_i clk_c ce_c in_c_0__n in_c_1__n in_c_2__n in_c_3__n in_c_4__n \
+#  in_c_5__n in_c_6__n in_c_7__n ser_outDFFreg stateDFF_0_reg stateDFF_1_reg \
+#  stateDFF_2_reg stateDFF_3_reg stateDFF_4_reg N_23_i N_4_0 N_27_i N_24_i \
+#  un4_state_1_0_1__n N_32_i state_2_0_3__n N_33_i N_15_0 N_28_i N_29_i N_30_i N_31_i \
+#  ser_out_11_iv_i N_25_i N_26_i N_8_0 ser_out_11_iv_i_1 ser_out_11_iv_i_2 N_8_0_1 \
+#  ser_out_0_sqmuxa_1 N_33_1 N_32_1 N_31_1 N_31_2 N_30_1 N_30_2 N_29_1 N_29_2 N_28_1 N_23_1 \
+#  ser_out_11_iv_0_m2_0_un3_n ser_out_11_iv_0_m2_0_un1_n ser_out_11_iv_0_m2_0_un0_n \
+#  ser_out_11_iv_0_m2_2_un3_n ser_out_11_iv_0_m2_2_un1_n ser_out_11_iv_0_m2_2_un0_n \
+#  ser_out_11_iv_0_m2_un3_n ser_out_11_iv_0_m2_un1_n ser_out_11_iv_0_m2_un0_n \
+#  ser_out_11_iv_0_m2_1_un3_n ser_out_11_iv_0_m2_1_un1_n ser_out_11_iv_0_m2_1_un0_n \
+#  ser_out_0_un3_n ser_out_0_un1_n ser_out_0_un0_n
+.model transmitter
+.inputs in_7_.BLIF clk.BLIF ce.BLIF in_6_.BLIF in_5_.BLIF in_4_.BLIF \
+in_3_.BLIF in_2_.BLIF in_1_.BLIF in_0_.BLIF G_7.BLIF G_9.BLIF \
+ser_out_0_sqmuxa.BLIF N_1.BLIF ser_out25_1.BLIF N_4.BLIF N_8.BLIF N_15.BLIF \
+N_17.BLIF N_19.BLIF N_23.BLIF N_25.BLIF N_26.BLIF N_27.BLIF N_28.BLIF \
+N_29.BLIF N_30.BLIF N_31.BLIF N_32.BLIF N_33.BLIF N_35.BLIF N_47.BLIF \
+G_5_i_x2.BLIF N_16.BLIF N_18.BLIF state_2_3__n.BLIF N_24.BLIF N_12.BLIF \
+N_10.BLIF state_i_0__n.BLIF state_i_4__n.BLIF state_i_1__n.BLIF in_i_1__n.BLIF \
+in_i_5__n.BLIF in_i_3__n.BLIF in_i_4__n.BLIF in_i_2__n.BLIF in_i_6__n.BLIF \
+ce_i.BLIF state_i_2__n.BLIF in_i_7__n.BLIF in_i_0__n.BLIF state_i_3__n.BLIF \
+ser_out_0_sqmuxa_i.BLIF clk_c.BLIF ce_c.BLIF in_c_0__n.BLIF in_c_1__n.BLIF \
+in_c_2__n.BLIF in_c_3__n.BLIF in_c_4__n.BLIF in_c_5__n.BLIF in_c_6__n.BLIF \
+in_c_7__n.BLIF ser_outDFFreg.BLIF stateDFF_0_reg.BLIF stateDFF_1_reg.BLIF \
+stateDFF_2_reg.BLIF stateDFF_3_reg.BLIF stateDFF_4_reg.BLIF N_23_i.BLIF \
+N_4_0.BLIF N_27_i.BLIF N_24_i.BLIF un4_state_1_0_1__n.BLIF N_32_i.BLIF \
+state_2_0_3__n.BLIF N_33_i.BLIF N_15_0.BLIF N_28_i.BLIF N_29_i.BLIF \
+N_30_i.BLIF N_31_i.BLIF ser_out_11_iv_i.BLIF N_25_i.BLIF N_26_i.BLIF \
+N_8_0.BLIF ser_out_11_iv_i_1.BLIF ser_out_11_iv_i_2.BLIF N_8_0_1.BLIF \
+ser_out_0_sqmuxa_1.BLIF N_33_1.BLIF N_32_1.BLIF N_31_1.BLIF N_31_2.BLIF \
+N_30_1.BLIF N_30_2.BLIF N_29_1.BLIF N_29_2.BLIF N_28_1.BLIF N_23_1.BLIF \
+ser_out_11_iv_0_m2_0_un3_n.BLIF ser_out_11_iv_0_m2_0_un1_n.BLIF \
+ser_out_11_iv_0_m2_0_un0_n.BLIF ser_out_11_iv_0_m2_2_un3_n.BLIF \
+ser_out_11_iv_0_m2_2_un1_n.BLIF ser_out_11_iv_0_m2_2_un0_n.BLIF \
+ser_out_11_iv_0_m2_un3_n.BLIF ser_out_11_iv_0_m2_un1_n.BLIF \
+ser_out_11_iv_0_m2_un0_n.BLIF ser_out_11_iv_0_m2_1_un3_n.BLIF \
+ser_out_11_iv_0_m2_1_un1_n.BLIF ser_out_11_iv_0_m2_1_un0_n.BLIF \
+ser_out_0_un3_n.BLIF ser_out_0_un1_n.BLIF ser_out_0_un0_n.BLIF
+.outputs state_4_ ser_out state_3_ state_2_ state_1_ state_0_ stateDFF_0_reg.D \
+stateDFF_0_reg.C stateDFF_1_reg.D stateDFF_1_reg.C stateDFF_2_reg.D \
+stateDFF_2_reg.C stateDFF_3_reg.D stateDFF_3_reg.C stateDFF_4_reg.D \
+stateDFF_4_reg.C ser_outDFFreg.D ser_outDFFreg.C ser_out_0_sqmuxa N_1 \
+ser_out25_1 N_4 N_8 N_15 N_17 N_19 N_23 N_25 N_26 N_27 N_28 N_29 N_30 N_31 \
+N_32 N_33 N_35 N_47 N_16 N_18 state_2_3__n N_24 N_12 N_10 state_i_0__n \
+state_i_4__n state_i_1__n in_i_1__n in_i_5__n in_i_3__n in_i_4__n in_i_2__n \
+in_i_6__n ce_i state_i_2__n in_i_7__n in_i_0__n state_i_3__n \
+ser_out_0_sqmuxa_i clk_c ce_c in_c_0__n in_c_1__n in_c_2__n in_c_3__n \
+in_c_4__n in_c_5__n in_c_6__n in_c_7__n N_23_i N_4_0 N_27_i N_24_i \
+un4_state_1_0_1__n N_32_i state_2_0_3__n N_33_i N_15_0 N_28_i N_29_i N_30_i \
+N_31_i ser_out_11_iv_i N_25_i N_26_i N_8_0 ser_out_11_iv_i_1 ser_out_11_iv_i_2 \
+N_8_0_1 ser_out_0_sqmuxa_1 N_33_1 N_32_1 N_31_1 N_31_2 N_30_1 N_30_2 N_29_1 \
+N_29_2 N_28_1 N_23_1 ser_out_11_iv_0_m2_0_un3_n ser_out_11_iv_0_m2_0_un1_n \
+ser_out_11_iv_0_m2_0_un0_n ser_out_11_iv_0_m2_2_un3_n \
+ser_out_11_iv_0_m2_2_un1_n ser_out_11_iv_0_m2_2_un0_n ser_out_11_iv_0_m2_un3_n \
+ser_out_11_iv_0_m2_un1_n ser_out_11_iv_0_m2_un0_n ser_out_11_iv_0_m2_1_un3_n \
+ser_out_11_iv_0_m2_1_un1_n ser_out_11_iv_0_m2_1_un0_n ser_out_0_un3_n \
+ser_out_0_un1_n ser_out_0_un0_n G_7 G_9 G_5_i_x2
+.names N_33_i.BLIF state_i_0__n.BLIF stateDFF_0_reg.D
+11 1
+.names un4_state_1_0_1__n.BLIF stateDFF_1_reg.D
+0 1
+.names N_1.BLIF ser_out_0_sqmuxa_i.BLIF ser_outDFFreg.D
+11 1
+.names ser_out_0_sqmuxa_1.BLIF N_47.BLIF ser_out_0_sqmuxa
+11 1
+.names ser_out_0_un1_n.BLIF ser_out_0_un0_n.BLIF N_1
+1- 1
+-1 1
+.names stateDFF_0_reg.BLIF stateDFF_1_reg.BLIF ser_out25_1
+11 1
+.names N_4_0.BLIF N_4
+0 1
+.names N_8_0.BLIF N_8
+0 1
+.names N_15_0.BLIF N_15
+0 1
+.names ser_out_11_iv_0_m2_un1_n.BLIF ser_out_11_iv_0_m2_un0_n.BLIF N_17
+1- 1
+-1 1
+.names ser_out_11_iv_0_m2_0_un1_n.BLIF ser_out_11_iv_0_m2_0_un0_n.BLIF N_19
+1- 1
+-1 1
+.names N_23_1.BLIF state_i_3__n.BLIF N_23
+11 1
+.names N_15.BLIF stateDFF_4_reg.BLIF N_25
+11 1
+.names stateDFF_0_reg.BLIF state_i_4__n.BLIF N_26
+11 1
+.names stateDFF_0_reg.BLIF state_i_1__n.BLIF N_27
+11 1
+.names N_28_1.BLIF stateDFF_2_reg.BLIF N_28
+11 1
+.names N_29_1.BLIF N_29_2.BLIF N_29
+11 1
+.names N_30_1.BLIF N_30_2.BLIF N_30
+11 1
+.names N_31_1.BLIF N_31_2.BLIF N_31
+11 1
+.names N_32_1.BLIF state_i_2__n.BLIF N_32
+11 1
+.names N_33_1.BLIF state_i_4__n.BLIF N_33
+11 1
+.names state_i_0__n.BLIF state_i_4__n.BLIF N_35
+11 1
+.names N_15_0.BLIF state_i_1__n.BLIF N_47
+11 1
+.names ser_out_11_iv_0_m2_1_un1_n.BLIF ser_out_11_iv_0_m2_1_un0_n.BLIF N_16
+1- 1
+-1 1
+.names ser_out_11_iv_0_m2_2_un1_n.BLIF ser_out_11_iv_0_m2_2_un0_n.BLIF N_18
+1- 1
+-1 1
+.names state_2_0_3__n.BLIF state_2_3__n
+0 1
+.names stateDFF_1_reg.BLIF state_i_0__n.BLIF N_24
+11 1
+.names N_10.BLIF state_2_3__n.BLIF N_12
+11 1
+.names N_4.BLIF ser_out25_1.BLIF N_10
+11 1
+.names stateDFF_0_reg.BLIF state_i_0__n
+0 1
+.names stateDFF_4_reg.BLIF state_i_4__n
+0 1
+.names stateDFF_1_reg.BLIF state_i_1__n
+0 1
+.names in_c_1__n.BLIF in_i_1__n
+0 1
+.names in_c_5__n.BLIF in_i_5__n
+0 1
+.names in_c_3__n.BLIF in_i_3__n
+0 1
+.names in_c_4__n.BLIF in_i_4__n
+0 1
+.names in_c_2__n.BLIF in_i_2__n
+0 1
+.names in_c_6__n.BLIF in_i_6__n
+0 1
+.names ce_c.BLIF ce_i
+0 1
+.names stateDFF_2_reg.BLIF state_i_2__n
+0 1
+.names in_c_7__n.BLIF in_i_7__n
+0 1
+.names in_c_0__n.BLIF in_i_0__n
+0 1
+.names stateDFF_3_reg.BLIF state_i_3__n
+0 1
+.names ser_out_0_sqmuxa.BLIF ser_out_0_sqmuxa_i
+0 1
+.names N_23.BLIF N_23_i
+0 1
+.names G_5_i_x2.BLIF N_23_i.BLIF N_4_0
+11 1
+.names N_27.BLIF N_27_i
+0 1
+.names N_24.BLIF N_24_i
+0 1
+.names N_24_i.BLIF N_27_i.BLIF un4_state_1_0_1__n
+11 1
+.names N_32.BLIF N_32_i
+0 1
+.names N_32_i.BLIF state_i_3__n.BLIF state_2_0_3__n
+11 1
+.names N_33.BLIF N_33_i
+0 1
+.names state_i_2__n.BLIF state_i_3__n.BLIF N_15_0
+11 1
+.names N_28.BLIF N_28_i
+0 1
+.names N_29.BLIF N_29_i
+0 1
+.names N_30.BLIF N_30_i
+0 1
+.names N_31.BLIF N_31_i
+0 1
+.names ser_out_11_iv_i_1.BLIF ser_out_11_iv_i_2.BLIF ser_out_11_iv_i
+11 1
+.names N_25.BLIF N_25_i
+0 1
+.names N_26.BLIF N_26_i
+0 1
+.names N_8_0_1.BLIF N_27_i.BLIF N_8_0
+11 1
+.names N_28_i.BLIF N_29_i.BLIF ser_out_11_iv_i_1
+11 1
+.names N_30_i.BLIF N_31_i.BLIF ser_out_11_iv_i_2
+11 1
+.names N_25_i.BLIF N_26_i.BLIF N_8_0_1
+11 1
+.names ce_i.BLIF N_35.BLIF ser_out_0_sqmuxa_1
+11 1
+.names N_47.BLIF ce_c.BLIF N_33_1
+11 1
+.names ser_out25_1.BLIF stateDFF_4_reg.BLIF N_32_1
+11 1
+.names N_47.BLIF in_i_7__n.BLIF N_31_1
+11 1
+.names stateDFF_4_reg.BLIF state_i_0__n.BLIF N_31_2
+11 1
+.names N_15_0.BLIF N_35.BLIF N_30_1
+11 1
+.names in_i_0__n.BLIF stateDFF_1_reg.BLIF N_30_2
+11 1
+.names N_17.BLIF N_35.BLIF N_29_1
+11 1
+.names stateDFF_3_reg.BLIF state_i_2__n.BLIF N_29_2
+11 1
+.names N_19.BLIF N_35.BLIF N_28_1
+11 1
+.names ser_out25_1.BLIF stateDFF_4_reg.BLIF N_23_1
+11 1
+.names stateDFF_1_reg.BLIF ser_out_11_iv_0_m2_0_un3_n
+0 1
+.names N_18.BLIF stateDFF_1_reg.BLIF ser_out_11_iv_0_m2_0_un1_n
+11 1
+.names N_16.BLIF ser_out_11_iv_0_m2_0_un3_n.BLIF ser_out_11_iv_0_m2_0_un0_n
+11 1
+.names stateDFF_3_reg.BLIF ser_out_11_iv_0_m2_2_un3_n
+0 1
+.names in_i_6__n.BLIF stateDFF_3_reg.BLIF ser_out_11_iv_0_m2_2_un1_n
+11 1
+.names in_i_2__n.BLIF ser_out_11_iv_0_m2_2_un3_n.BLIF \
+ser_out_11_iv_0_m2_2_un0_n
+11 1
+.names stateDFF_1_reg.BLIF ser_out_11_iv_0_m2_un3_n
+0 1
+.names in_i_4__n.BLIF stateDFF_1_reg.BLIF ser_out_11_iv_0_m2_un1_n
+11 1
+.names in_i_3__n.BLIF ser_out_11_iv_0_m2_un3_n.BLIF ser_out_11_iv_0_m2_un0_n
+11 1
+.names stateDFF_3_reg.BLIF ser_out_11_iv_0_m2_1_un3_n
+0 1
+.names in_i_5__n.BLIF stateDFF_3_reg.BLIF ser_out_11_iv_0_m2_1_un1_n
+11 1
+.names in_i_1__n.BLIF ser_out_11_iv_0_m2_1_un3_n.BLIF \
+ser_out_11_iv_0_m2_1_un0_n
+11 1
+.names N_8.BLIF ser_out_0_un3_n
+0 1
+.names ser_outDFFreg.BLIF N_8.BLIF ser_out_0_un1_n
+11 1
+.names ser_out_11_iv_i.BLIF ser_out_0_un3_n.BLIF ser_out_0_un0_n
+11 1
+.names state_2_3__n.BLIF N_10.BLIF G_7
+01 1
+10 1
+11 0
+00 0
+.names N_12.BLIF stateDFF_4_reg.BLIF G_9
+01 1
+10 1
+11 0
+00 0
+.names ser_out25_1.BLIF stateDFF_2_reg.BLIF G_5_i_x2
+01 1
+10 1
+11 0
+00 0
+.names stateDFF_4_reg.BLIF state_4_
+1 1
+0 0
+.names ser_outDFFreg.BLIF ser_out
+1 1
+0 0
+.names stateDFF_3_reg.BLIF state_3_
+1 1
+0 0
+.names stateDFF_2_reg.BLIF state_2_
+1 1
+0 0
+.names stateDFF_1_reg.BLIF state_1_
+1 1
+0 0
+.names stateDFF_0_reg.BLIF state_0_
+1 1
+0 0
+.names clk_c.BLIF stateDFF_0_reg.C
+1 1
+0 0
+.names clk_c.BLIF stateDFF_1_reg.C
+1 1
+0 0
+.names N_4_0.BLIF stateDFF_2_reg.D
+1 1
+0 0
+.names clk_c.BLIF stateDFF_2_reg.C
+1 1
+0 0
+.names G_7.BLIF stateDFF_3_reg.D
+1 1
+0 0
+.names clk_c.BLIF stateDFF_3_reg.C
+1 1
+0 0
+.names G_9.BLIF stateDFF_4_reg.D
+1 1
+0 0
+.names clk_c.BLIF stateDFF_4_reg.C
+1 1
+0 0
+.names clk_c.BLIF ser_outDFFreg.C
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names ce.BLIF ce_c
+1 1
+0 0
+.names in_0_.BLIF in_c_0__n
+1 1
+0 0
+.names in_1_.BLIF in_c_1__n
+1 1
+0 0
+.names in_2_.BLIF in_c_2__n
+1 1
+0 0
+.names in_3_.BLIF in_c_3__n
+1 1
+0 0
+.names in_4_.BLIF in_c_4__n
+1 1
+0 0
+.names in_5_.BLIF in_c_5__n
+1 1
+0 0
+.names in_6_.BLIF in_c_6__n
+1 1
+0 0
+.names in_7_.BLIF in_c_7__n
+1 1
+0 0
+.end
